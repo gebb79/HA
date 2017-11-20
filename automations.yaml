@@ -1,0 +1,213 @@
+- alias: Test
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.bom_nobbys_air_temp_c
+    above: 15
+  action:
+    service: persistent_notification.create
+    data:
+      message: "temp is greater than 15"
+# LIGHTS #############################################
+- alias: Turn on kitchen lights when sun sets
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:10:00"
+#  condition:
+#    condition: state
+#    entity_id: group.all_devices
+#    to: 'home'
+  action:
+    service: light.turn_on
+    entity_id: group.kitchenlights
+
+- alias: Turn on lamp light after dark
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "02:00:00"
+  action:
+    service: light.turn_on
+    entity_id: light.lamp
+
+- alias: Turn OFF lamp light after dark
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30'
+  action:
+    service: light.turn_off
+    entity_id: light.lamp
+
+- alias: Turn on tv light after dark
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "02:00:00"
+  action:
+    service: light.turn_on
+    entity_id: light.tv
+
+- alias: Turn ON office night light
+  trigger:
+    platform: time
+    at: "21:30:00"
+  action:
+    service: scene.turn_on
+    entity_id: scene.office_night_light
+
+- alias: Turn OFF office night light
+  trigger:
+    platform: time
+    at: "07:30:00"
+  action:
+    service: light.turn_off
+    entity_id: light.gateway_light_34ce0088d15b
+
+- alias: Turn ON office lamp
+  trigger:
+    platform: sun
+    event: sunset
+#    offset: 00:10
+  action:
+    service: switch.turn_on
+    entity_id: switch.plug_158d000183aeca
+
+- alias: Turn OFF office lamp
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '-00:30'
+  action:
+    service: switch.turn_off
+    entity_id: switch.plug_158d000183aeca
+
+- alias: click on kitchen lights
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d00015e886a
+      click_type: single
+  action:
+    service: light.toggle
+    entity_id: group.kitchenlights
+
+- alias: dclick on lounge lights
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d00015e886a
+      click_type: double
+  action:
+    service: light.toggle
+    entity_id: group.loungeroomlights
+
+- alias: motion pantry lights on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000113e123
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.pantry
+
+- alias: motion pantry lights off 5 minutes
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000113e123
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+    service: light.turn_off
+    entity_id: light.pantry
+
+- alias: Cube event shake_air
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00010f050f
+      action_type: shake_air
+  action:
+    service: scene.turn_on
+    entity_id: scene.bed_time_lights_off
+
+
+# NOTIFICATIONS ######################################
+- alias: Test Telstra Notifications
+  initial_state: 'off'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: -00:30
+  action:
+    # Actions are scripts so can also be a list of actions
+    - service: notify.telstraag
+      data:
+        message: The sun is setting soon
+    - delay: 0:35
+    - service: notify.telstraag
+      data:
+        message: Oh wow you really missed something great.
+
+- alias: Raining Windows Open
+  trigger:
+    platform: state
+    entity_id: sensor.dark_sky_summary
+    to: 'rain'
+  condition:
+    condition: state
+    entity_id: binary_sensor.door_window_sensor_158d00016fde47
+    state: 'on'
+  action:
+    - service: notify.telstraag
+      data:
+        message: Office window is open and its going to rain
+    - service: notify.telstracm
+      data:
+         message: Office window is open and its going to rain
+    - service: notify.telstramp
+      data:
+         message: Office window is open and its going to rain
+    - service: scene.turn_on
+      entity_id: scene.office_light_blue
+
+# LOW BATTERY ########################################
+- alias: low battery temp sensor
+  trigger:
+    platform: numeric_state
+    entity_id: binary_sensor.door_window_sensor_158d00016fde47
+    value_template: '{{state.attributes.battery_level}}'
+    below: 10
+  action:
+    service: persistent_notification.create
+    data_template:
+      message: >
+        {{ trigger.entity_id|replace('sensor.', '')|replace('_', ' ')|capitalize }} is at {{ states(trigger.entity_id)}}%
+      title: ""
+
+- alias: ag phone about to die
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.gebbphone7_battery_level
+    below: 5
+  action:
+    service: notify.telstracm
+    data:
+      message: Anthony's phone is about to die
+
+# DOOR OPEN ##########################################
+- alias: front door left open
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001a2028d
+    to: 'on'
+    for:
+      minutes: 5
+  action:
+    service: notify.telstraag
+    data:
+      message: The front door has been open for 5 minutes

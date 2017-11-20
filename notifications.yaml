@@ -1,0 +1,17 @@
+  - platform: telstra
+    name: telstraag
+    consumer_key: !secret telstrakey
+    consumer_secret: !secret telstrasecret
+    phone_number: !secret gebbphone
+
+  - platform: telstra
+    name: telstracm
+    consumer_key: !secret telstrakey
+    consumer_secret: !secret telstrasecret
+    phone_number: !secret camillephone
+
+  - platform: telstra
+    name: telstramp
+    consumer_key: !secret telstrakey
+    consumer_secret: !secret telstrasecret
+    phone_number: !secret miaphone

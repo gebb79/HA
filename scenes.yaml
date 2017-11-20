@@ -1,0 +1,40 @@
+# SCENES #############################################
+- name: Movie2
+  entities:
+    light.tv:
+      state: on
+      brightness: 55
+    group.kitchenlights:
+      state: on
+      brightness: 55
+      #color_temp: 400 <---- not supported under light
+      #kelvin: 2500 <------- not supported under light
+      rgb_color: [55,55,55]
+
+
+- name: All Lights off
+  entities:
+    group.all_lights:
+      state: off
+
+- name: bed time lights off #turn off all lights for bed
+  entities:
+    group.bedtimelights:
+      state: off
+
+#- name: movie3
+#  service: homeassistant.turn_on
+#  entity_id:
+- name: office light blue
+  entities:
+    light.gateway_light_34ce0088d15b:
+      state: on
+      brightness: 255
+      rgb_color: [4,26,255]
+
+- name: office night light
+  entities:
+    light.gateway_light_34ce0088d15b:
+      state: on
+      brightness: 150
+      rgb_color: [106,15,0]

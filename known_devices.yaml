@@ -1,0 +1,468 @@
+
+iphonemia:
+  hide_if_away: true
+  icon: mdi:cellphone-iphone
+  mac: 74:1B:B2:67:E8:E7
+  name: iPhone-Mia
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+hpswitch:
+  hide_if_away: false
+  icon: mdi:switch
+  mac: 00:26:F1:D5:D5:C0
+  name: HP Switch
+  picture:
+  track: true
+  vendor: ProCurve Networking by HP
+
+macbook:
+  hide_if_away: true
+  icon: mdi:laptop-mac
+  mac: 60:03:08:93:93:34
+  name: macbook
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+iphonecamille:
+  hide_if_away: true
+  icon: mdi:cellphone-iphone
+  mac: 70:3E:AC:2B:DC:78
+  name: iPhone-Camille
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+hp8600:
+  hide_if_away: true
+  icon: mdi:printer
+  mac: EC:9A:74:91:CF:B9
+  name: Printer
+  picture:
+  track: true
+  vendor: Hewlett Packard
+
+synologynas:
+  hide_if_away: false
+  icon: mdi:download-network
+  mac: 00:11:32:07:6D:52
+  name: NAS
+  picture:
+  track: true
+  vendor: Synology Incorporated
+
+router:
+  hide_if_away: false
+  icon: mdi:router-wireless
+  mac: E0:B9:E5:B3:72:5A
+  name: Router
+  picture:
+  track: true
+  vendor: Technicolor
+
+iphonegebb:
+  hide_if_away: true
+  icon: mdi:cellphone-iphone
+  mac: 60:F4:45:6B:BE:E1
+  name: iPhone-Gebb
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+gebbpad:
+  hide_if_away: true
+  icon: mdi:tablet-ipad
+  mac: B8:E8:56:79:C1:80
+  name: iPad
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+atv4:
+  hide_if_away: true
+  icon: mdi:video
+  mac: C8:69:CD:66:67:7C
+  name: ATV4
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+airport:
+  hide_if_away: true
+  icon: mdi:wifi
+  mac: 10:9A:DD:89:42:BF
+  name: Airport AP
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+tvloungeroomwifi:
+  hide_if_away: true
+  icon: mdi:television
+  mac: 48:E2:44:94:91:FB
+  name: TV-loungeroom
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+imaceth:
+  hide_if_away: false
+  icon: mdi:desktop-mac
+  mac: 38:C9:86:0D:42:FD
+  name: iMac-Eth
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+imacwifi:
+  hide_if_away: true
+  icon: mdi:desktop-mac
+  mac: 28:F0:76:16:BE:62
+  name: iMac-WiFi
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+lifxk1:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:01:8C:6F
+  name: Kitchen-1
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+wdtvlive:
+  hide_if_away: true
+  icon: mdi:video
+  mac: 00:90:A9:9B:D9:52
+  name: WDTV media player
+  picture:
+  track: true
+  vendor: WESTERN DIGITAL
+
+applewatch:
+  hide_if_away: true
+  icon: mdi:watch
+  mac: C0:CE:CD:DB:41:49
+  name: iWatch-Anthony
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+lifxl4:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:02:C3:94
+  name: lifxl4
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+lifxl3:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:02:EA:F6
+  name: lifxl3
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+lifxl2:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:03:55:4F
+  name: lifxl2
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+yamaha3050:
+  hide_if_away: true
+  icon: mdi:amplifier
+  mac: 00:A0:DE:D2:60:3F
+  name: Yamaha Amplifier
+  picture:
+  track: true
+  vendor: YAMAHA CORPORATION
+
+lifxl1:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:03:52:C2
+  name: Lounge Room 1
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+tvloungeroometh:
+  hide_if_away: true
+  icon: mdi:television
+  mac: 10:4F:A8:0D:9D:9F
+  name: TV-loungeroom Ethernet
+  picture:
+  track: true
+  vendor: Sony Corporation
+
+nintendoswitch:
+  hide_if_away: true
+  icon: mdi:nintendo-switch
+  mac: 98:B6:E9:00:83:71
+  name: Nintendo Switch
+  picture:
+  track: true
+  vendor: Nintendo Co.,Ltd
+
+androidmere:
+  hide_if_away: true
+  icon: mdi:tablet-android
+  mac: AC:37:43:A3:A5:AD
+  name: Tablet-Mere
+  picture:
+  track: true
+  vendor: HTC Corporation
+
+iphonemere:
+  hide_if_away: true
+  icon: mdi:cellphone-iphone
+  mac: 88:C6:63:C5:4E:B0
+  name: iPhone-Mere
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+d073d5005471:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:00:54:71
+  name: d073d5005471
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+d073d5007716:
+  hide_if_away: true
+  icon: mdi:lightbulb
+  mac: D0:73:D5:00:77:16
+  name: d073d5007716
+  picture:
+  track: true
+  vendor: unknown
+
+android5841a7850196e9dclan:
+  hide_if_away: false
+  icon:
+  mac: 30:F7:72:4E:BB:A5
+  name: android-5841a7850196e9dc.lan
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+gebbphone6slan:
+  hide_if_away: false
+  icon:
+  mac: CC:20:E8:CF:D0:6B
+  name: GebbPhone6s.lan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+rbs50lan:
+  hide_if_away: false
+  icon:
+  mac: 9C:3D:CF:FA:EA:8F
+  name: RBS50.lan
+  picture:
+  track: true
+  vendor: NETGEAR
+
+rbr50lan:
+  hide_if_away: false
+  icon:
+  mac: 9C:3D:CF:FA:B6:7D
+  name: RBR50.lan
+  picture:
+  track: true
+  vendor: NETGEAR
+
+atv4lan:
+  hide_if_away: false
+  icon:
+  mac: C8:69:CD:66:67:7E
+  name: ATV4.lan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+d4f513194b6b:
+  hide_if_away: false
+  icon:
+  mac: D4:F5:13:19:4B:6B
+  name: d4f513194b6b
+  picture:
+  track: true
+  vendor: Texas Instruments
+
+android8d92e08e1c9bf2belan:
+  hide_if_away: false
+  icon:
+  mac: 50:2E:5C:F0:6C:B7
+  name: android-8d92e08e1c9bf2be.lan
+  picture:
+  track: true
+  vendor: HTC Corporation
+
+recoverylan:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:A1:C5:00
+  name: recovery.lan
+  picture:
+  track: true
+  vendor: Raspberry Pi Foundation
+
+gatewayoffice:
+  hide_if_away: false
+  icon: mdi:server-network
+  mac: 34:CE:00:88:D1:5B
+  name: Xiaomi Gateway Office
+  picture:
+  track: false
+  vendor: XIAOMI Electronics,CO.,LTD
+
+wksagebbielan:
+  hide_if_away: false
+  icon:
+  mac: B8:08:CF:26:96:DC
+  name: WKS-AGEBBIE.lan
+  picture:
+  track: true
+  vendor: Intel Corporate
+
+gebbphone7:
+  hide_if_away: false
+  icon:
+  mac:
+  name: gebbphone7
+  picture:
+  track: true
+  vendor:
+
+trigiphonelan:
+  hide_if_away: false
+  icon:
+  mac: 20:3C:AE:DD:92:DA
+  name: TrigiPhone.lan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+d073d502c645:
+  hide_if_away: false
+  icon:
+  mac: D0:73:D5:02:C6:45
+  name: d073d502c645
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+d073d502f6d2:
+  hide_if_away: false
+  icon:
+  mac: D0:73:D5:02:F6:D2
+  name: d073d502f6d2
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+d073d502c48a:
+  hide_if_away: false
+  icon:
+  mac: D0:73:D5:02:C4:8A
+  name: d073d502c48a
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+d073d503bae6:
+  hide_if_away: false
+  icon:
+  mac: D0:73:D5:03:BA:E6
+  name: d073d503bae6
+  picture:
+  track: true
+  vendor: LIFI LABS MANAGEMENT PTY LTD
+
+lightify7d2ccclan:
+  hide_if_away: false
+  icon:
+  mac: 84:18:26:7D:2C:CC
+  name: Lightify-7D2CCC.lan
+  picture:
+  track: true
+  vendor: Osram GmbH
+
+xboxonelan:
+  hide_if_away: false
+  icon:
+  mac: 98:5F:D3:F9:54:E1
+  name: XBOXONE.lan
+  picture:
+  track: true
+  vendor: Microsoft Corporation
+
+anthonysipadlan:
+  hide_if_away: false
+  icon:
+  mac: 78:7B:8A:86:D2:3B
+  name: Anthonys-iPad.lan
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+rmmini408720lan:
+  hide_if_away: false
+  icon:
+  mac: 34:EA:34:40:87:20
+  name: RMMINI-40-87-20.lan
+  picture:
+  track: true
+  vendor: HangZhou Gubei Electronics Technology Co.,Ltd
+
+gebbpadpro:
+  hide_if_away: false
+  icon:
+  mac:
+  name: gebbpadpro
+  picture:
+  track: true
+  vendor:
+
+googlehomelan:
+  hide_if_away: false
+  icon:
+  mac: E4:F0:42:4F:4C:01
+  name: Google-Home.lan
+  picture:
+  track: true
+  vendor: Google, Inc.
+
+chromecastlan:
+  hide_if_away: false
+  icon:
+  mac: 6C:AD:F8:D9:0D:E4
+  name: Chromecast.lan
+  picture:
+  track: true
+  vendor: AzureWave Technology Inc.
+
+iphonelan:
+  hide_if_away: false
+  icon:
+  mac: 34:08:BC:65:E1:16
+  name: iPhone.lan
+  picture:
+  track: true
+  vendor: Apple, Inc.

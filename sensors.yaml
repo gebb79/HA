@@ -1,0 +1,70 @@
+# Weather Prediction <<NEED to combine with other sensors>>
+  #- platform: yr
+
+  - platform: bom
+    station: IDN60801.94774
+    name: Nobbys
+    monitored_conditions:
+      - apparent_t
+      #- delta_t
+      #- gust_kmh
+      - air_temp
+      #- dewpt
+      - rain_trace
+      - rel_hum
+      #- vis_km
+      - wind_dir
+      - wind_spd_kmh
+
+
+  - platform: darksky
+    api_key: !secret darkskytoken
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+      - precip_probability
+      - precip_intensity
+      - cloud_cover
+
+  - platform: uber
+    server_token: !secret ubertoken
+# Home Address
+    start_latitude: -32.921919
+    start_longitude: 151.759478
+# Burwood Inn Hotel
+    end_latitude: -32.940431
+    end_longitude: 151.752801
+    product_ids:
+      - 'dcf4b3a7-aeb6-43b5-8647-59b44c4002c5'
+
+  - platform: google_travel_time
+    api_key: !secret googletoken
+    name: NEWC2SYD
+    origin: zone.home
+    destination: 680 George St, Sydney, Australia
+
+  - platform: google_travel_time
+    api_key: !secret googletoken
+    name: Home2Cardiff
+    origin: zone.home
+    destination: zone.camille_work_cardiff
+
+  - platform: speedtest
+    minute:
+      - 0
+      - 20
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
+  - platform: moon
+
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+      - type: processor_use
+      - type: since_last_boot

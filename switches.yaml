@@ -1,0 +1,4 @@
+  - platform: broadlink
+    host: 10.0.0.39
+    mac: '34:EA:34:40:87:20'
+    friendly_name: 'Broadlink RM'

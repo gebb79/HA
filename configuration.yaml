@@ -1,0 +1,214 @@
+# CORE ###############################################
+homeassistant:
+  name: Home
+  latitude: -32.921919
+  longitude: 151.759478
+  elevation: 1
+  unit_system: metric
+  time_zone: Australia/Sydney
+
+#  customize:
+#    - entity_id: light.k1
+#      custom_ui_state_card: custom-ui
+#      state_card_mode: break-slider
+#      stretch_slider: true
+#      extra_data_template: "{power_consumption!=10}W"
+#      hide_control: false
+#      show_last_changed: true
+#      slider_theme:
+#        min: 10
+#        max: 200
+#        pin: true
+#        off_when_min: false
+#        report_when_not_changed: false
+  customize:
+    sensor.temperature_158d0001216fc4:
+      friendly_name: Temperature
+    switch.plug_158d000183aeca:
+      friendly_name: Office Lamp
+    light.gateway_light_34ce0088d15b:
+      friendly_name: Office Gateway Light
+    sensor.illumination_34ce0088d15b:
+      friendly_name: Illumination
+    sensor.humidity_158d0001216fc4:
+      friendly_name: Humidity
+    sensor.newc2syd:
+      friendly_name: Home to Sydney
+    sensor.home2cardiff:
+      friendly_name: Home to Cardiff
+    camera.xbox_360:
+      friendly_name: Xbox 360 Webcam
+    binary_sensor.door_window_sensor_158d00016fde47:
+      friendly_name: Office Window
+    binary_sensor.door_window_sensor_158d00016c73c2:
+      friendly_name: Window small
+    binary_sensor.door_window_sensor_158d0001a227f5:
+      friendly_name: Window large
+    binary_sensor.door_window_sensor_158d0001a2028d:
+      friendly_name: Front Door
+    sensor.humidity_158d0001824263:
+      friendly_name: Humidity
+    sensor.temperature_158d0001824263:
+      friendly_name: Temperature
+
+ios:
+frontend:
+config:
+updater:
+map:
+discovery:
+  ignore:
+    - apple_tv #stops TV from turning on after HA restart
+conversation:
+history:
+  exclude:
+    domains:
+      - light
+      - scene
+      - script
+      - automation
+      - sun
+    entities:
+      - media_player.yamaha_3050_zone_2
+      - media_player.yamaha_3050_zone_3
+      - group.speedtest
+      - group.media_select
+      - device_tracker.airport
+
+logbook:
+sun:
+light:
+  - platform: lifx
+    server: 10.0.0.4
+  - platform: osramlightify
+    host: 10.0.0.109
+
+xiaomi_aqara:
+ gateways:
+   - mac: 34CE0088D15B #MAC address of gateway
+     key: !secret xgatewaykey
+
+
+# SECURITY ###########################################
+http:
+  api_password: !secret http_password
+  trusted_networks:
+    - 10.0.0.0/24
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+  base_url: !secret base_url
+
+# Text to speech #####################################
+tts:
+  platform: google
+
+# EXTERNAL FILE REFERENCE ############################
+group: !include groups.yaml
+automation: !include automations.yaml
+zone: !include zones.yaml
+scene: !include scenes.yaml
+notify: !include notifications.yaml
+switch: !include switches.yaml
+sensor: !include sensors.yaml
+input_select: !include inputselects.yaml
+
+# iFrRAMES ###########################################
+panel_iframe:
+  synology:
+    title: 'Synology DS1010'
+    url: 'http://10.0.0.100'
+    icon: mdi:download-network
+  switch:
+    title: 'HP Switch'
+    url: 'http://10.0.0.130'
+    icon: mdi:switch
+  amplifier:
+    title: 'Yamaha 3050'
+    url: 'http://lounge-room.local'
+    icon: mdi:surround-sound
+
+# CAMERAS ############################################
+camera:
+  - platform: local_file
+    name: xbox_360
+    file_path: /tmp/lastsnap.jpg
+# PANELS #############################################
+# SENSORS ############################################
+# TRACKING ###########################################
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 10.0.0.1/24
+    exclude:
+      - 10.0.0.94
+      - 10.0.0.4
+
+# MEDIA PLAYERS ######################################
+media_player:
+  - platform: braviatv
+    host: 10.0.0.2
+    name: Loungeroom TV Android
+
+  - platform: yamaha
+    host: 10.0.0.6
+    name: Yamaha 3050
+    source_names:
+      AUDIO1: "TV ARC"
+      AV1: "1.ATV4"
+      AV2: "2.XBONE-S"
+      AV3: "3.Nintendo Switch"
+    source_ignore:
+      - "AV4"
+      - "AV5"
+      - "AV6"
+      - "AV7"
+      - "AUDIO2"
+      - "AUDIO3"
+
+  - platform: kodi
+    host: 10.0.0.2
+    name: Kodi Loungeroom
+
+  - platform: apple_tv
+    host: 10.0.0.64
+    name: Apple TV
+    login_id: !secret appletvid
+    start_off: true
+
+# INPUT SELECTIONS ###################################
+# STATISTICS #########################################
+# SCRIPTS ############################################
+script:
+  get_recent_movies:
+    alias: Last added movies
+    sequence:
+      - service: media_player.kodi_call_method
+        data:
+          entity_id: media_player.kodi_loungeroom
+          method: VideoLibrary.GetRecentlyAddedMovies
+          properties:
+            - title
+            - year
+            - file
+            - lastplayed
+
+  get_recent_episodes:
+    alias: Last TV shows
+    sequence:
+      - service: media_player.kodi_call_method
+        data:
+          entity_id: media_player.kodi_loungeroom
+          method: VideoLibrary.GetRecentlyAddedEpisodes
+          properties:
+            - showtitle
+            - file
+            - lastplayed
+            - firstaired
+
+  get_pvr_channels:
+    alias: TV Channels
+    sequence:
+      - service: media_player.kodi_call_method
+        data:
+          entity_id: media_player.kodi_loungeroom
+          method: PVR.GetChannels
+          channelgroupid: 1

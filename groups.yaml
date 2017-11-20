@@ -1,0 +1,203 @@
+default_view:
+  view: true
+  icon: mdi:home
+  entities:
+  - sensor.bom_nobbys_air_temp_c
+  - sensor.bom_nobbys_rain_today
+  - sensor.moon
+  - binary_sensor.door_window_sensor_158d0001a2028d
+  - binary_sensor.motion_sensor_158d000113e123
+  - device_tracker.gebbphone7
+  - group.travel
+  - group.whoshome
+  - group.speedtest
+  - group.cameras
+lights:
+  view: true
+  icon: mdi:lightbulb-on
+  entities:
+  - group.loungeroomlights
+  - group.kitchenlights
+  - group.officelights
+  - group.diningroomlights
+  - group.pantrylights
+  - group.downstairslights
+miscellaneous:
+  view: true
+  icon: mdi:weather-sunny
+  entities:
+  - group.weather
+  - group.envirooffice
+  - group.enviroloungeroom
+  - group.darksky
+tv:
+  view: true
+  icon: mdi:television
+  entities:
+  - group.loungeroommediaplayers
+  - input_select.tvchannel
+  - input_select.radiostation
+  - media_player.kd65x8500c
+gadgets:
+  view: true
+  icon: mdi:desktop-classic
+  entities:
+  - group.batterylifegebbpad
+  - group.batterylifegebbphone
+  - group.pistats
+testing:
+  view: true
+  icon: mdi:test-tube
+  entities:
+  - scene.movie2
+  - scene.all_lights_off
+  - scene.office_light_blue
+  - scene.bed_time_lights_off
+  - scene.office_night_light
+automations:
+  view: true
+  icon: mdi:home-automation
+  entities:
+  - automation.test
+  - automation.turn_on_kitchen_lights_when_sun_sets
+  - automation.test_telstra
+  - automation.raining_windows_open
+  - automation.turn_on_office_night_light
+  - automation.turn_off_office_night_light
+  - automation.test_telstra_notifications
+  - automation.turn_on_office_lamp
+  - automation.turn_off_office_lamp
+  - automation.turn_on_tv_light_after_dark
+  - automation.front_door_left_open
+  name: automations
+loungeroommediaplayers:
+  name: Loungeroom Media Players
+  entities:
+  - media_player.apple_tv
+  - media_player.yamaha_3050
+  - media_player.loungeroom_tv_android
+  - media_player.kodi_loungeroom
+  - input_select.kodi_results
+loungeroomlights:
+  name: Loungeroom Lights
+  entities:
+  - light.blhs
+  - light.brhs
+  - light.flhs
+  - light.frhs
+  - light.tv
+diningroomlights:
+  name: Dining Room Lights
+  entities:
+  - light.drblh
+  - light.drbrhs
+  - light.drfls
+  - light.drfrs
+downstairslights:
+  name: Downstairs Lights
+  entities:
+  - light.lamp
+whoshome:
+  name: Whos Home
+  entities:
+  - device_tracker.iphonecamille
+  - device_tracker.iphonegebb
+  - device_tracker.iphonemere
+  - device_tracker.iphonemia
+weather:
+  name: weather
+  entities:
+  - sensor.bom_nobbys_air_temp_c
+  - sensor.bom_nobbys_rain_today
+  - sensor.bom_nobbys_wind_direction
+  - sensor.bom_nobbys_wind_speed_kmh
+  - sun.sun
+kitchenlights:
+  name: Kitchen Lights
+  entities:
+  - light.k1
+  - light.k2
+  - light.k3
+pantrylights:
+  name: Pantry Lights
+  entities:
+  - light.p16tw_01
+  - light.p16tw_02
+travel:
+  name: Travel
+  entities:
+  - sensor.newc2syd
+  - sensor.home2cardiff
+  - sensor.uberx_price
+  - sensor.uberx_time
+speedtest:
+  name: Speed Test
+  entities:
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+  - sensor.speedtest_ping
+batterylifegebbpad:
+  name: GebbPad Battery Life
+  entities:
+  - sensor.gebbpad_battery_level
+  - sensor.gebbpad_battery_state
+batterylifegebbphone:
+  name: GebbPhone Battery Life
+  entities:
+  - sensor.gebbphone7_battery_level
+  - sensor.gebbphone7_battery_state
+pistats:
+  name: Raspi Stats
+  entities:
+  - sensor.cpu_use
+  - sensor.disk_use_home
+  - sensor.ram_free
+  - sensor.since_last_boot
+cameras:
+  name: Cameras
+  entities:
+  - camera.xbox_360
+  view: false
+envirooffice:
+  name: Environmentals Office
+  entities:
+  - sensor.humidity_158d0001216fc4
+  - sensor.illumination_34ce0088d15b
+  - sensor.temperature_158d0001216fc4
+  - binary_sensor.door_window_sensor_158d00016fde47
+enviroloungeroom:
+  name: Environmentals Lounge Room
+  entities:
+  - sensor.humidity_158d0001824263
+  - sensor.temperature_158d0001824263
+  - binary_sensor.door_window_sensor_158d00016c73c2
+  - binary_sensor.door_window_sensor_158d0001a227f5
+officelights:
+  name: Office Lights
+  entities:
+  - light.gateway_light_34ce0088d15b
+  - switch.plug_158d000183aeca
+bedtimelights:
+  name: Bedtime Lights
+  entities:
+    - group.kitchenlights
+    - group.loungeroomlights
+    - switch.plug_158d000183aeca
+    - group.pantrylights
+    - group.diningroomlights
+    - light.lamp
+darksky:
+  name: Dark Sky weather
+  entities:
+  - sensor.dark_sky_icon
+  - sensor.dark_sky_nearest_storm_distance
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_precip_intensity
+  - sensor.dark_sky_precip_probability
+Media Select:
+  control: hidden
+  entities:
+  - input_select.kodi_results
+  - script.get_recent_movies
+  - script.get_recent_episodes
+  - script.get_pvr_channels

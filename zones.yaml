@@ -1,0 +1,19 @@
+# ZONES ##############################################
+- name: Anthony Work
+  latitude: -32.916087
+  longitude: 151.756614
+  radius: 100
+  icon: mdi:domain
+
+- name: Camille Work Cardiff
+  latitude: -32.941421
+  longitude: 151.660131
+  radius: 100
+  icon: mdi:domain
+
+- name: Burwood Inn
+  passive: true
+  latitude: -32.940431
+  longitude: 151.752801
+  radius: 100
+  icon: mdi:domain
